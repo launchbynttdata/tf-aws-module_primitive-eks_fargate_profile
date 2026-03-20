@@ -127,9 +127,6 @@ clean:
 init-clean:
 	rm -rf .git
 	git init --initial-branch=main
-ifneq (,$(wildcard ./TEMPLATED_README.md))
-	mv TEMPLATED_README.md README.MD
-endif
 
 .PHONY: init-module
 init-module:
