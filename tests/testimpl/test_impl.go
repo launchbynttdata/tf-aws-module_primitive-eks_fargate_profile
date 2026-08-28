@@ -18,11 +18,11 @@ func TestComposableComplete(t *testing.T, ctx testTypes.TestContext) {
 	eksClient := GetAWSEKSClient(t)
 	terraformOptions := ctx.TerratestTerraformOptions()
 
-	clusterName := terraform.Output(t, terraformOptions, "cluster_name")
-	profileName := terraform.Output(t, terraformOptions, "fargate_profile_name")
-	profileArn := terraform.Output(t, terraformOptions, "fargate_profile_arn")
-	profileID := terraform.Output(t, terraformOptions, "fargate_profile_id")
-	profileTags := terraform.OutputMap(t, terraformOptions, "fargate_profile_tags_all")
+	clusterName := terraform.OutputContext(t, context.Background(), terraformOptions, "cluster_name")
+	profileName := terraform.OutputContext(t, context.Background(), terraformOptions, "fargate_profile_name")
+	profileArn := terraform.OutputContext(t, context.Background(), terraformOptions, "fargate_profile_arn")
+	profileID := terraform.OutputContext(t, context.Background(), terraformOptions, "fargate_profile_id")
+	profileTags := terraform.OutputMapContext(t, context.Background(), terraformOptions, "fargate_profile_tags_all")
 
 	require.NotEmpty(t, clusterName, "Terraform output cluster_name should not be empty")
 	require.NotEmpty(t, profileName, "Terraform output fargate_profile_name should not be empty")
@@ -58,11 +58,11 @@ func TestComposableCompleteReadonly(t *testing.T, ctx testTypes.TestContext) {
 	eksClient := GetAWSEKSClient(t)
 	terraformOptions := ctx.TerratestTerraformOptions()
 
-	clusterName := terraform.Output(t, terraformOptions, "cluster_name")
-	profileName := terraform.Output(t, terraformOptions, "fargate_profile_name")
-	profileArn := terraform.Output(t, terraformOptions, "fargate_profile_arn")
-	profileID := terraform.Output(t, terraformOptions, "fargate_profile_id")
-	profileTags := terraform.OutputMap(t, terraformOptions, "fargate_profile_tags_all")
+	clusterName := terraform.OutputContext(t, context.Background(), terraformOptions, "cluster_name")
+	profileName := terraform.OutputContext(t, context.Background(), terraformOptions, "fargate_profile_name")
+	profileArn := terraform.OutputContext(t, context.Background(), terraformOptions, "fargate_profile_arn")
+	profileID := terraform.OutputContext(t, context.Background(), terraformOptions, "fargate_profile_id")
+	profileTags := terraform.OutputMapContext(t, context.Background(), terraformOptions, "fargate_profile_tags_all")
 
 	require.NotEmpty(t, clusterName, "Terraform output cluster_name should not be empty")
 	require.NotEmpty(t, profileName, "Terraform output fargate_profile_name should not be empty")
