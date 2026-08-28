@@ -166,6 +166,7 @@ secrets-baseline:
 	@echo "✅ Secrets baseline created successfully!"
 	@echo "Review .secrets.baseline to ensure no false positives are included."
 ifeq ($(wildcard $(COMPONENTS_DIR)/Makefile),)
+ifeq ($(wildcard $(COMPONENTS_DIR)/Makefile),)
 # golangci-lint via go tool (go.mod tool directive)
 GO ?= go
 GOLANGCI_LINT := $(GO) tool golangci-lint
