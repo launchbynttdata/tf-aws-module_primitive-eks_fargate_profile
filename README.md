@@ -79,8 +79,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_name"></a> [name](#output\_name) | The name of the Fargate profile. |
 | <a name="output_arn"></a> [arn](#output\_arn) | The ARN of the Fargate profile. |
 | <a name="output_id"></a> [id](#output\_id) | The ID of the Fargate profile. |
+| <a name="output_name"></a> [name](#output\_name) | The name of the Fargate profile. |
 | <a name="output_tags_all"></a> [tags\_all](#output\_tags\_all) | A map of tags assigned to the Fargate profile, including those inherited from the provider default\_tags configuration block. |
 <!-- END_TF_DOCS -->
