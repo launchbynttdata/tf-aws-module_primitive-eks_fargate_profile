@@ -123,7 +123,7 @@ Automatic updates will run through a scheduled workflow, and if the post-update 
 
 ```hcl
 module "fargate_profile" {
-  source = "terraform.registry.launch.nttdata.com/module_primitive/eks_fargate_profile/aws"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/eks_fargate_profile/aws"
   version = "~> 0.1"
 
   cluster_name           = var.cluster_name
@@ -134,6 +134,8 @@ module "fargate_profile" {
   tags                   = var.tags
 }
 ```
+
+For a working composition with cluster, VPC, subnets, and IAM roles, see [examples/complete](./examples/complete).
 
 ## Requirements
 
